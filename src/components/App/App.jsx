@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container, Section, Heading } from 'components/UiComponents';
-import { Feedback, Statistics, Notification } from 'components';
+import { Container, Heading } from 'components/UiComponents';
+import { Feedback, Statistics, Notification, Section } from 'components';
 
 export default class App extends React.Component {
   state = {
@@ -9,7 +9,7 @@ export default class App extends React.Component {
     bad: 0,
   };
 
-  onFeedback = state => {
+  onLeaveFeedback = state => {
     this.setState(prevState => ({
       [state]: prevState[state] + 1,
     }));
@@ -28,32 +28,31 @@ export default class App extends React.Component {
 
   render() {
     const { good, neutral, bad } = this.state;
-    const totalFeedback = this.countTotalFeedback();
+    const total = this.countTotalFeedback();
     const positivePercentage = this.countPositiveFeedbackPercentage();
 
     return (
-      <Section>
-        <Container>
-          <Heading>Feedback</Heading>
-          <Feedback
-            title="Please leave feedback"
-            onFeedback={this.onFeedback}
-          />
-          <Heading>Statistics</Heading>
-          {totalFeedback > 0 ? (
+      <Container>
+        <Heading>Feedback</Heading>
+        <Section title="Please leave feedback">
+          <Feedback onLeaveFeedback={this.onLeaveFeedback} />
+        </Section>
+        <Heading>Statistics</Heading>
+
+        <Section title="Feedback statistics">
+          {total > 0 ? (
             <Statistics
-              title="Statistics"
               good={good}
               neutral={neutral}
               bad={bad}
-              total={totalFeedback}
+              total={total}
               positivePercentage={positivePercentage}
             />
           ) : (
             <Notification message="There is no feedback" />
           )}
-        </Container>
-      </Section>
+        </Section>
+      </Container>
     );
   }
 }

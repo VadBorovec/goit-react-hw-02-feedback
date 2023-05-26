@@ -6,6 +6,5 @@ export const Text = styled.h2`
   text-shadow: 1px 1px 2px ${props => props.theme.colors.gray};
 
   text-align: center;
-  margin-top: ${props => props.theme.spacing(12.5)};
-  margin-bottom: ${props => props.theme.spacing(12.5)};
+  padding: ${props => props.theme.spacing(12.5)};
 `;

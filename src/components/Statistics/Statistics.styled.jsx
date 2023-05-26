@@ -12,17 +12,7 @@ export const Item = styled.li`
   align-items: center;
   gap: ${props => props.theme.spacing(2)};
 
-  padding: ${props => props.theme.spacing(5)};
-`;
+  font-size: ${props => props.theme.fontSizes.small};
 
-export const Label = styled.p`
-  font-size: ${props => props.theme.fontSizes.medium};
-  color: ${props => props.theme.colors.gray};
-  margin-bottom: 0;
-`;
-
-export const Value = styled.span`
-  font-size: ${props => props.theme.spacing(8)};
-  font-weight: 700;
-  color: ${props => props.theme.colors.white};
+  padding: ${props => props.theme.spacing(10)};
 `;
