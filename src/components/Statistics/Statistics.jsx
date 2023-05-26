@@ -3,18 +3,38 @@ import { Card, CardHeader, CardTitle } from 'components/UiComponents';
 import { List, Item, Label, Value } from './Statistics.styled';
 import { getRandomColor } from 'helpers';
 
-export const Statistics = ({ title, stats, id, label, percentage }) => {
+export const Statistics = ({
+  title,
+  stats,
+  id,
+  label,
+  percentage,
+  good,
+  neutral,
+  bad,
+  total,
+  positivePercentage,
+}) => {
   return (
     <Card>
       <CardHeader>{title && <CardTitle>{title}</CardTitle>}</CardHeader>
 
       <List>
-        {stats.map(({ id, label, percentage }) => (
-          <Item key={id} style={{ backgroundColor: getRandomColor() }}>
-            <Label>{label}</Label>
-            <Value>{percentage}%</Value>
-          </Item>
-        ))}
+        <Item key={id} style={{ backgroundColor: getRandomColor() }}>
+          Good: {good}
+        </Item>
+        <Item key={id} style={{ backgroundColor: getRandomColor() }}>
+          Neutral: {neutral}
+        </Item>
+        <Item key={id} style={{ backgroundColor: getRandomColor() }}>
+          Bad: {bad}
+        </Item>
+        <Item key={id} style={{ backgroundColor: getRandomColor() }}>
+          Total: {total}
+        </Item>
+        <Item key={id} style={{ backgroundColor: getRandomColor() }}>
+          Positive Feedback: {positivePercentage}%
+        </Item>
       </List>
     </Card>
   );
