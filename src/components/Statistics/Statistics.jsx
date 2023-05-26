@@ -1,14 +1,9 @@
 import PropTypes from 'prop-types';
 import { Card, CardHeader, CardTitle } from 'components/UiComponents';
-import { List, Item, Label, Value } from './Statistics.styled';
-import { getRandomColor } from 'helpers';
+import { List, Item } from './Statistics.styled';
 
 export const Statistics = ({
   title,
-  stats,
-  id,
-  label,
-  percentage,
   good,
   neutral,
   bad,
@@ -20,21 +15,11 @@ export const Statistics = ({
       <CardHeader>{title && <CardTitle>{title}</CardTitle>}</CardHeader>
 
       <List>
-        <Item key={id} style={{ backgroundColor: getRandomColor() }}>
-          Good: {good}
-        </Item>
-        <Item key={id} style={{ backgroundColor: getRandomColor() }}>
-          Neutral: {neutral}
-        </Item>
-        <Item key={id} style={{ backgroundColor: getRandomColor() }}>
-          Bad: {bad}
-        </Item>
-        <Item key={id} style={{ backgroundColor: getRandomColor() }}>
-          Total: {total}
-        </Item>
-        <Item key={id} style={{ backgroundColor: getRandomColor() }}>
-          Positive Feedback: {positivePercentage}%
-        </Item>
+        <Item>Good: {good}</Item>
+        <Item>Neutral: {neutral}</Item>
+        <Item>Bad: {bad}</Item>
+        <Item>Total: {total}</Item>
+        <Item>Positive Feedback: {positivePercentage}%</Item>
       </List>
     </Card>
   );
@@ -42,11 +27,9 @@ export const Statistics = ({
 
 Statistics.propTypes = {
   title: PropTypes.string,
-  stats: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-      percentage: PropTypes.number.isRequired,
-    })
-  ).isRequired,
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
 };
