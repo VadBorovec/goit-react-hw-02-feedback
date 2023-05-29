@@ -8,4 +8,5 @@ export const Container = styled.div`
 
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: ${props => props.theme.spacing(10)};
 `;
