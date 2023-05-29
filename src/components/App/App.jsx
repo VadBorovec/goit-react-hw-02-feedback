@@ -28,6 +28,7 @@ export default class App extends React.Component {
 
   render() {
     const { good, neutral, bad } = this.state;
+    const options = Object.keys(this.state);
     const total = this.countTotalFeedback();
     const positivePercentage = this.countPositiveFeedbackPercentage();
 
@@ -35,7 +36,7 @@ export default class App extends React.Component {
       <Container>
         <Heading>Feedback</Heading>
         <Section title="Please leave feedback">
-          <Feedback onLeaveFeedback={this.onLeaveFeedback} />
+          <Feedback options={options} onLeaveFeedback={this.onLeaveFeedback} />
         </Section>
         <Heading>Statistics</Heading>
 

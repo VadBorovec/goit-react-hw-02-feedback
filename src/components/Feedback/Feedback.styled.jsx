@@ -1,24 +1,30 @@
 import styled from '@emotion/styled';
 
 export const List = styled.ul`
-  background-color: ${props => props.theme.colors.white};
-  border-radius: 0 0 ${props => props.theme.spacing(3)};
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
 
-  padding: ${props => props.theme.spacing(3)} ${props => props.theme.spacing(5)};
+  /* background-color: ${props => props.theme.colors.white}; */
+  /* border-radius: 0 0 ${props => props.theme.spacing(3)}; */
+
+  /* padding: ${props => props.theme.spacing(3)} ${props =>
+    props.theme.spacing(5)}; */
 
   display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); */
+  /* column-gap: ${props => props.theme.spacing(2)}; */
   row-gap: ${props => props.theme.spacing(2)};
 `;
 
 export const Item = styled.li`
-  display: flex;
+  /* display: flex;
   align-items: center;
-  gap: ${props => props.theme.spacing(4)};
-  width: 320px;
+  gap: ${props => props.theme.spacing(4)}; */
+  width: 100%;
 
-  padding: 10px 30px 10px 10px;
+  padding: ${props => props.theme.spacing(6)};
   overflow: hidden;
-  border-radius: 10px;
 
   box-shadow: ${props => props.theme.shadows.medium};
   cursor: pointer;
@@ -33,30 +39,3 @@ export const Item = styled.li`
     box-shadow: ${props => props.theme.shadows.small};
   }
 `;
-
-// export const Status = styled.span`
-//   width: ${props => props.theme.spacing(4)};
-//   height: ${props => props.theme.spacing(4)};
-//   border-radius: 50%;
-
-//   background-color: ${props => (props.status ? 'green' : 'red')};
-// `;
-
-// export const Avatar = styled.img`
-//   width: ${props => props.theme.spacing(15)};
-//   height: ${props => props.theme.spacing(15)};
-//   border-radius: 50%;
-
-//   box-shadow: ${props => props.theme.shadows.regular};
-// `;
-
-// export const Name = styled.h3`
-//   font-weight: 600;
-//   font-size: ${props => props.theme.fontSizes.large};
-//   letter-spacing: ${props => props.theme.spacing(0.25)};
-
-//   color: ${props => props.theme.colors.gray};
-
-//   margin-left: ${props => props.theme.spacing(2)};
-//   margin-bottom: 0;
-// `;
