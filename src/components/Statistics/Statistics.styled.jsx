@@ -1,18 +1,32 @@
 import styled from '@emotion/styled';
 
 export const List = styled.ul`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  column-gap: ${props => props.theme.spacing(2)};
+  row-gap: ${props => props.theme.spacing(2)}; */
 `;
 
 export const Item = styled.li`
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: ${props => props.theme.spacing(2)};
+  justify-content: center;
+  gap: ${props => props.theme.spacing(4)};
+  width: 100%;
 
-  font-size: ${props => props.theme.fontSizes.small};
+  padding: ${props => props.theme.spacing(4)};
+  overflow: hidden;
 
-  padding: ${props => props.theme.spacing(10)};
+  box-shadow: ${props => props.theme.shadows.medium};
+  /* cursor: pointer; */
+
+  transition-property: transform, box-shadow;
+  transition-duration: 0.25s;
+
+  background-color: ${props => props.theme.colors.white};
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: ${props => props.theme.shadows.small};
+  }
 `;
