@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
 
 export const List = styled.ul`
-  display: grid;
-  /* row-gap: ${props => props.theme.spacing(2)}; */
+  display: flex;
 `;
 
 export const Item = styled.li`

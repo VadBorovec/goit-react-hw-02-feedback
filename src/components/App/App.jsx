@@ -1,8 +1,8 @@
 import React from 'react';
-import { Container, Heading } from 'components/UiComponents';
-import { Feedback, Statistics, Notification, Section } from 'components';
+import { Container, Section } from 'components/ui';
+import { Feedback, Statistics, Notification } from 'components';
 
-export default class App extends React.Component {
+export class App extends React.Component {
   state = {
     good: 0,
     neutral: 0,
@@ -34,11 +34,9 @@ export default class App extends React.Component {
 
     return (
       <Container>
-        <Heading>Feedback</Heading>
         <Section title="Please leave feedback">
           <Feedback options={options} onLeaveFeedback={this.onLeaveFeedback} />
         </Section>
-        <Heading>Statistics</Heading>
 
         <Section title="Feedback statistics">
           {total > 0 ? (

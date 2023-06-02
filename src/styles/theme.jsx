@@ -1,6 +1,10 @@
 export const theme = Object.freeze({
   colors: {
     accent: '#4dd0e1',
+    btn: 'teal',
+    btnHover: 'darkcyan',
+    btnActive: 'lightseagreen',
+    deepteal: '#003336',
     white: '#ffffff',
     gray: '#9e9e9e',
     light: '#f2f2f2',
@@ -12,7 +16,6 @@ export const theme = Object.freeze({
     small: '14px',
     medium: '18px',
     large: '22px',
-    xlarge: '26px',
   },
   spacing: value => `${4 * value}px`,
   shadows: {

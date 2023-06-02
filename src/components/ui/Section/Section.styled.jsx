@@ -5,8 +5,8 @@ export const Card = styled.section`
   flex-direction: column;
 
   width: fit-content;
-  overflow: hidden;
-  margin: 0 auto;
+  overflow: visible;
+  margin: ${props => props.theme.spacing(20)} auto;
 
   box-shadow: ${props => props.theme.shadows.medium};
   border-radius: ${props => props.theme.spacing(4)};
@@ -22,8 +22,9 @@ export const Card = styled.section`
 
 export const CardHeader = styled.div`
   padding: ${props => props.theme.spacing(10)};
-
   background-color: ${props => props.theme.colors.accent};
+  border-top-left-radius: ${props => props.theme.spacing(4)};
+  border-top-right-radius: ${props => props.theme.spacing(4)};
 `;
 
 export const CardTitle = styled.h2`
@@ -35,4 +36,7 @@ export const CardTitle = styled.h2`
   color: ${props => props.theme.colors.white};
 
   margin: 0;
+`;
+export const CardContent = styled.div`
+  padding: ${props => props.theme.spacing(5)};
 `;
